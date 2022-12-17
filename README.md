@@ -1,6 +1,6 @@
 # Linear_Data_Types_in_TIA_Portal
 
-  [partner repo to the youtube video playlist](https://youtu.be/Kc-Ht6MtJSM)
+  [partner repo to the youtube video playlist](https://youtube.com/playlist?list=PLUoxgLCBHm7KRMzm6Yb31SZ5gKtp77V5C)
   
   topics covered
   * stacks (LIFO buffer)
