@@ -1,0 +1,36 @@
+﻿FUNCTION "Int.ArrayPlus.Pop" : Int
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_IN_OUT 
+      buffer : "Int.ArrayPlus.UDT";
+   END_VAR
+
+   VAR_TEMP 
+      value : Int;
+   END_VAR
+
+
+BEGIN
+	REGION "EMPTY"
+	    IF #buffer.length = 0 THEN
+	        #"Int.ArrayPlus.Pop" := 0;
+	        RETURN;
+	    END_IF;
+	END_REGION
+	
+	
+	REGION "NOT EMPTY"
+	    // save value
+	    #value := #buffer.data[0];
+	    // shift left
+	    "Int.Array.ShiftLeft"(places := 1,
+	                          data := #buffer.data);
+	    // decrement length
+	    #buffer.length -= 1;
+	    // return value
+	    #"Int.ArrayPlus.Pop" := #value;
+	    RETURN;
+	END_REGION
+	
+END_FUNCTION
+
